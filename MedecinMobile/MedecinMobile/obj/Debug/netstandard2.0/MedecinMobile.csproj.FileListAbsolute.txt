@@ -1,0 +1,13 @@
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\bin\Debug\netstandard2.0\MedecinMobile.deps.json
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\bin\Debug\netstandard2.0\MedecinMobile.dll
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\bin\Debug\netstandard2.0\MedecinMobile.pdb
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MedecinMobile.csproj.AssemblyReference.cache
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MedecinMobile.GeneratedMSBuildEditorConfig.editorconfig
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\App.xaml.g.cs
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MedecinMobile.AssemblyInfoInputs.cache
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MedecinMobile.AssemblyInfo.cs
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MedecinMobile.csproj.CoreCompileInputs.cache
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\XamlC.stamp
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MedecinMobile.dll
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MedecinMobile.pdb
