@@ -4,10 +4,11 @@
              x:Class="MedecinMobile.MainPage">
 
     <StackLayout Margin="10">
-        <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+        <FlexLayout Margin="0,0,0,10">
             <StackLayout>
                 <Label Text="Сортировка складов:" VerticalOptions="Center" />
-                <Picker x:Name="warehouseSortPicker" VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontSize="20" SelectedIndexChanged="NameSortPicker_OnSelectedIndexChanged">
+                <Picker x:Name="warehouseSortPicker" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                        FontSize="20" SelectedIndexChanged="WarehouseSortPicker_OnSelectedIndexChanged">
                     <Picker.Items>
                         <x:String>По возрастанию</x:String>
                         <x:String>По убыванию</x:String>
@@ -17,45 +18,81 @@
 
             <StackLayout>
                 <Label Text="Сортировка по имени:" VerticalOptions="Center" Margin="10,0,0,0" />
-                <Picker x:Name="nameSortPicker" VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontSize="20" SelectedIndexChanged="NameSortPicker_OnSelectedIndexChanged">
+                <Picker x:Name="nameSortPicker" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                        FontSize="20" SelectedIndexChanged="NameSortPicker_OnSelectedIndexChanged">
                     <Picker.Items>
                         <x:String>По возрастанию</x:String>
                         <x:String>По убыванию</x:String>
                     </Picker.Items>
                 </Picker>
             </StackLayout>
-        </StackLayout>
+            <StackLayout>
+                <Label Text="Фильтрация складов:" VerticalOptions="Center" />
+                <Picker x:Name="warehouseFilterPicker" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                        FontSize="20" SelectedIndexChanged="WarehouseFilterPicker_OnSelectedIndexChanged">
+                </Picker>
+            </StackLayout>
 
+            <StackLayout>
+                <Label Text="Фильтрация по имени:" VerticalOptions="Center" Margin="10,0,0,0" />
+                <Picker x:Name="nameFilterPicker" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                        FontSize="20" SelectedIndexChanged="NameFilterPicker_OnSelectedIndexChanged">
+                </Picker>
+            </StackLayout>
+        </FlexLayout>
+        <!-- Header ListView-->
+        <FlexLayout>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Margin="5,0,0,0" Text="ID"/>
+            <Label Grid.Column="1" Margin="5,0,0,0" Text="Название" />
+            <Label Grid.Column="2" Margin="5,0,0,0" Text="Торговое название" />
+            <Label Grid.Column="3" Margin="5,0,0,0" Text="Производитель" />
+            <Label Grid.Column="4" Margin="5,0,0,0" Text="Изображение" />
+            <Label Grid.Column="5" Margin="5,0,0,0" Text="Цена" />
+            <Label Grid.Column="6" Margin="5,0,0,0" Text="Количество" />
+            <Label Grid.Column="7" Margin="5,0,0,0" Text="Склад" />
+        </Grid>
+        </FlexLayout>
+        <!-- Data -->
         <ListView x:Name="tableMedicin" HasUnevenRows="True" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid Margin="5">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
                             </Grid.ColumnDefinitions>
                             <Label Grid.Column="0" Margin="5,0,0,0" Text="{Binding id}" />
                             <Label Grid.Column="1" Margin="5,0,0,0" Text="{Binding name}" />
                             <Label Grid.Column="2" Margin="5,0,0,0" Text="{Binding tradeName}" />
                             <Label Grid.Column="3" Margin="5,0,0,0" Text="{Binding manufacturer}" />
-                            <Label Grid.Column="4" Margin="5,0,0,0" Text="{Binding image}" />
+                            <Image Grid.Column="4" Margin="5,0,0,0" Source="{Binding image}" />
                             <Label Grid.Column="5" Margin="5,0,0,0" Text="{Binding price}" />
                             <Label Grid.Column="6" Margin="5,0,0,0" Text="{Binding stockQuantity}" />
                             <Label Grid.Column="7" Margin="5,0,0,0" Text="{Binding WareHouseName}" />
-                            <Label Grid.Column="8" Margin="5,0,0,0" Text="{Binding warehouseId}" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-
 </ContentPage>

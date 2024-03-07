@@ -11,3 +11,4 @@ F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\Med
 F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\XamlC.stamp
 F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MedecinMobile.dll
 F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MedecinMobile.pdb
+F:\VSCode\MedecinMobile\MedecinMobile\MedecinMobile\obj\Debug\netstandard2.0\MedecinMobile.sourcelink.json
