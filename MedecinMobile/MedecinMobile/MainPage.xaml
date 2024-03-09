@@ -42,27 +42,27 @@
         </FlexLayout>
         <!-- Header ListView-->
         <FlexLayout>
-        <Grid Margin="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30"/>
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Margin="5,0,0,0" Text="ID"/>
-            <Label Grid.Column="1" Margin="5,0,0,0" Text="Название" />
-            <Label Grid.Column="2" Margin="5,0,0,0" Text="Торговое название" />
-            <Label Grid.Column="3" Margin="5,0,0,0" Text="Производитель" />
-            <Label Grid.Column="4" Margin="5,0,0,0" Text="Изображение" />
-            <Label Grid.Column="5" Margin="5,0,0,0" Text="Цена" />
-            <Label Grid.Column="6" Margin="5,0,0,0" Text="Количество" />
-            <Label Grid.Column="7" Margin="5,0,0,0" Text="Склад" />
-        </Grid>
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Margin="5,0,0,0" Text="ID" />
+                <Label Grid.Column="1" Margin="5,0,0,0" Text="Название" />
+                <Label Grid.Column="2" Margin="5,0,0,0" Text="Торговое название" />
+                <Label Grid.Column="3" Margin="5,0,0,0" Text="Производитель" />
+                <Label Grid.Column="4" Margin="5,0,0,0" Text="Изображение" />
+                <Label Grid.Column="5" Margin="5,0,0,0" Text="Цена" />
+                <Label Grid.Column="6" Margin="5,0,0,0" Text="Количество" />
+                <Label Grid.Column="7" Margin="5,0,0,0" Text="Склад" />
+            </Grid>
         </FlexLayout>
         <!-- Data -->
         <ListView x:Name="tableMedicin" HasUnevenRows="True" SeparatorVisibility="None">
@@ -71,7 +71,7 @@
                     <ViewCell>
                         <Grid Margin="5">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="30" />
                                 <ColumnDefinition Width="100" />
                                 <ColumnDefinition Width="100" />
                                 <ColumnDefinition Width="100" />
@@ -94,5 +94,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button  Clicked="Button_OnClicked" Text="Обновить"></Button>
+
     </StackLayout>
 </ContentPage>

@@ -51,7 +51,6 @@ namespace MedecinMobile
             catch (Exception e)
             {
                 await DisplayAlert("Ошибка!", e.Message, "OK");
-                throw;
             }
         }
 
@@ -200,6 +199,18 @@ namespace MedecinMobile
         private async void WarehouseFilterPicker_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             await FilterWarehouse();
+        }
+
+        private void Button_OnClicked(object sender, EventArgs e)
+        {
+            try
+            {
+            InitializeGetdata();
+            }
+            catch (Exception exception)
+            {
+                DisplayAlert("Ошибка", exception.Message, "OK");
+            }
         }
     }
 }
