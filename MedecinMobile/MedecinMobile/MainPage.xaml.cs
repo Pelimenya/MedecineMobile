@@ -24,17 +24,21 @@ namespace MedecinMobile
             {
                 await GetData();
                 _data = Operations.MedicinesList.ToList();
-                // warehouseFilterPicker.ItemsSource = _data.Select(x => x.WareHouseName).Distinct().ToList();
-                // nameFilterPicker.ItemsSource = _data.Select(x => x.WareHouseName).Distinct().ToList();
-                // warehouseFilterPicker.Items.Add("Все");
-                // nameFilterPicker.Items.Add("Все");
-                // warehouseFilterPicker.SelectedIndex = 0;
-                // nameFilterPicker.SelectedIndex = 0;
+
+                var itemsWarehouse = _data.Select(x => x.WareHouseName).Distinct().ToList();
+                var itemsName = _data.Select(x => x.tradeName).Distinct().ToList();
+
+                itemsWarehouse.Insert(0, "Все");
+                itemsName.Insert(0, "Все");
+
+                warehouseFilterPicker.ItemsSource = itemsWarehouse.ToList();
+                nameFilterPicker.ItemsSource = itemsName.ToList();
+                nameFilterPicker.SelectedIndex = 0;
+                warehouseFilterPicker.SelectedIndex = 0;
             }
             catch (Exception e)
             {
                 await DisplayAlert("Ошибка!", e.Message, "OK");
-                
             }
         }
 
@@ -133,18 +137,48 @@ namespace MedecinMobile
         {
             try
             {
+                var data = _data.ToList();
                 if (warehouseFilterPicker.SelectedIndex > 0)
                 {
-                    _data = _data.Where(x =>
+                    data = _data.Where(x =>
                         x.WareHouseName ==
                         _data.FirstOrDefault(y => y.WareHouseName == (string)warehouseFilterPicker.SelectedItem)
                             ?.WareHouseName).ToList();
                 }
+                else
+                {
+                    data = _data;
+                }
+
+                tableMedicin.ItemsSource = data.ToList();
             }
             catch (Exception e)
             {
-                await DisplayAlert("", e.Message, "OK");
-                throw;
+                await DisplayAlert("Ошибка фильтрации", e.Message, "OK");
+            }
+        }
+
+        private async Task FilterName()
+        {
+            try
+            {
+                var data = _data.ToList();
+                if (nameFilterPicker.SelectedIndex > 0)
+                {
+                    data = _data.Where(x =>
+                        x.tradeName == _data.FirstOrDefault(f => f.tradeName == (string)nameFilterPicker.SelectedItem)
+                            ?.tradeName).ToList();
+                }
+                else
+                {
+                    data = _data;
+                }
+
+                tableMedicin.ItemsSource = data.ToList();
+            }
+            catch (Exception e)
+            {
+                await DisplayAlert("Ошибка фильтрации", e.Message, "OK");
             }
         }
 
@@ -160,6 +194,7 @@ namespace MedecinMobile
 
         private async void NameFilterPicker_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+            await FilterName();
         }
 
         private async void WarehouseFilterPicker_OnSelectedIndexChanged(object sender, EventArgs e)
