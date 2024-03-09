@@ -13,12 +13,13 @@ namespace MedecinMobile
         public MainPage()
         {
             InitializeComponent();
-            InitializeGetdata();
+            Initializedata();
         }
 
         private List<Medicine> _data;
+        private static List<Medicine> _dataFilter;
 
-        private async void InitializeGetdata()
+        private async void Initializedata()
         {
             try
             {
@@ -35,6 +36,8 @@ namespace MedecinMobile
                 nameFilterPicker.ItemsSource = itemsName.ToList();
                 nameFilterPicker.SelectedIndex = 0;
                 warehouseFilterPicker.SelectedIndex = 0;
+
+                _dataFilter = _data.ToList();
             }
             catch (Exception e)
             {
@@ -136,20 +139,24 @@ namespace MedecinMobile
         {
             try
             {
-                var data = _data.ToList();
                 if (warehouseFilterPicker.SelectedIndex > 0)
                 {
-                    data = _data.Where(x =>
-                        x.WareHouseName ==
-                        _data.FirstOrDefault(y => y.WareHouseName == (string)warehouseFilterPicker.SelectedItem)
-                            ?.WareHouseName).ToList();
-                }
-                else
-                {
-                    data = _data;
+                    _dataFilter = _data.Where(x => x.WareHouseName == _data.FirstOrDefault(y => y.WareHouseName ==
+                        (string)warehouseFilterPicker.SelectedItem)?.WareHouseName).ToList();
+
+                    if (nameFilterPicker.SelectedIndex > 0)
+                    {
+                        _dataFilter = _dataFilter.Where(x => x.tradeName == _dataFilter
+                            .FirstOrDefault(f => f.tradeName == (string)nameFilterPicker.SelectedItem)?.tradeName).ToList();
+                    }
                 }
 
-                tableMedicin.ItemsSource = data.ToList();
+                else if (nameSortPicker.SelectedIndex > 0)
+                    await FilterName();
+                else
+                    _dataFilter = _data;
+
+                tableMedicin.ItemsSource = _dataFilter.ToList();
             }
             catch (Exception e)
             {
@@ -157,23 +164,33 @@ namespace MedecinMobile
             }
         }
 
+
         private async Task FilterName()
         {
             try
             {
-                var data = _data.ToList();
                 if (nameFilterPicker.SelectedIndex > 0)
                 {
-                    data = _data.Where(x =>
+                    _dataFilter = _data.Where(x =>
                         x.tradeName == _data.FirstOrDefault(f => f.tradeName == (string)nameFilterPicker.SelectedItem)
                             ?.tradeName).ToList();
-                }
-                else
-                {
-                    data = _data;
-                }
 
-                tableMedicin.ItemsSource = data.ToList();
+                    if (warehouseFilterPicker.SelectedIndex > 0)
+                    {
+                        _dataFilter = _dataFilter.Where(x =>
+                            x.WareHouseName ==
+                            _dataFilter.FirstOrDefault(y =>
+                                    y.WareHouseName == (string)warehouseFilterPicker.SelectedItem)
+                                ?.WareHouseName).ToList();
+                    }
+                }
+                else if (warehouseFilterPicker.SelectedIndex > 0)
+                    await FilterWarehouse();
+                else
+                    _dataFilter = _data;
+
+
+                tableMedicin.ItemsSource = _dataFilter.ToList();
             }
             catch (Exception e)
             {
@@ -205,7 +222,7 @@ namespace MedecinMobile
         {
             try
             {
-            InitializeGetdata();
+                Initializedata();
             }
             catch (Exception exception)
             {
