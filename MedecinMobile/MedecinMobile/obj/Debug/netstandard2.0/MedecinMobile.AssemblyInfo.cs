@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MedecinMobile")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bda784056fe45b4ca533738517e200e290852421")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c99b7ae9ea500075174a2d34d310e53c89a7d9a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedecinMobile")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedecinMobile")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

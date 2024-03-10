@@ -29,14 +29,14 @@
             <StackLayout>
                 <Label Text="Фильтрация складов:" VerticalOptions="Center" />
                 <Picker x:Name="warehouseFilterPicker" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
-                        FontSize="20" SelectedIndexChanged="WarehouseFilterPicker_OnSelectedIndexChanged">
+                        FontSize="20" SelectedIndexChanged="FilterPicker_OnSelectedIndexChanged">
                 </Picker>
             </StackLayout>
 
             <StackLayout>
                 <Label Text="Фильтрация по имени:" VerticalOptions="Center" Margin="10,0,0,0" />
                 <Picker x:Name="nameFilterPicker" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
-                        FontSize="20" SelectedIndexChanged="NameFilterPicker_OnSelectedIndexChanged">
+                        FontSize="20" SelectedIndexChanged="FilterPicker_OnSelectedIndexChanged">
                 </Picker>
             </StackLayout>
         </FlexLayout>
