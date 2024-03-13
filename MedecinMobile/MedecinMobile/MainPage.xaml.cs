@@ -18,6 +18,7 @@ namespace MedecinMobile
 
         private List<Medicine> _data;
 
+        // метод для загрузки данных
         private async void Initializedata()
         {
             try
@@ -42,6 +43,7 @@ namespace MedecinMobile
             }
         }
 
+        // метод для получения данных и заполнения их в ListView
         private async Task GetData()
         {
             try
@@ -54,6 +56,7 @@ namespace MedecinMobile
             }
         }
 
+        // метод для сортировки данных 
         private async Task SortData(string sortBy)
         {
             try
@@ -101,6 +104,7 @@ namespace MedecinMobile
             }
         }
 
+        // метод для фильтрации данных 
         private async Task Filter()
         {
             try

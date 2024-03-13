@@ -11,6 +11,8 @@ namespace MedecinMobile.Models
     {
         private const string ClientPath = "http://192.168.1.2:5055/api/Medicines";
         private const string WarehousePath = "http://192.168.1.2:5055/api/Warehouses";
+        
+        //метод для получения данных из таблицы "медецина"
         public static async Task GetMedicines(ListView tableMedicin)
         {
             WebClient client = new WebClient();
@@ -23,6 +25,8 @@ namespace MedecinMobile.Models
 
         public static List<Medicine> MedicinesList;
         public static List<Warehouse> WarehousesList;
+        
+        //метод для получения данных из таблицы "склады"
         public static async Task GetWareHouse()
         {
             WebClient client = new WebClient();
